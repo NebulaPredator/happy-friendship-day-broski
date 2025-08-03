@@ -1,0 +1,263 @@
+:root {
+    --primary-black: #000000;
+    --primary-gray: #333333;
+    --silver: #C0C0C0;
+    --neon-green: #00FF00;
+    --electric-blue: #00FFFF;
+}
+
+body {
+    background: var(--primary-black);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px;
+    padding: 40px;
+    background: rgba(51, 51, 51, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.6s ease-out;
+    backdrop-filter: blur(8px);
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--neon-green), var(--electric-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    animation: pulse 2.5s infinite ease-out;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #39FF14; /* Brighter neon green for visibility */
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6); /* Enhanced shadow for contrast */
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 1.25rem;
+    color: var(--silver);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 24px;
+}
+
+.friendship-icons i {
+    transition: transform 0.5s ease-out;
+}
+
+.friendship-icons i:hover {
+    transform: scale(1.3);
+}
+
+button#giftToggle, button#celebrateButton {
+    padding: 12px 32px;
+    background: linear-gradient(to right, var(--electric-blue), var(--neon-green));
+    color: #FFFFFF;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.4s ease-out;
+}
+
+button#giftToggle:hover, button#celebrateButton:hover {
+    background: linear-gradient(to right, var(--electric-blue), var(--neon-green));
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+button#giftToggle:focus, button#celebrateButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.4);
+}
+
+.gift-message {
+    padding: 24px;
+    background: linear-gradient(to bottom, var(--primary-gray), var(--electric-blue));
+    border: 2px solid var(--silver);
+    border-radius: 12px;
+    color: var(--silver);
+    margin-top: 16px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.9s ease-out, max-height 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.gift-message:not(.hidden) {
+    opacity: 1;
+    max-height: 300px;
+    transform: scale(1);
+}
+
+.friendship-celebration {
+    background: linear-gradient(to bottom, var(--primary-gray), var(--primary-black));
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--silver);
+}
+
+.celebration-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--neon-green);
+    margin-bottom: 16px;
+}
+
+#celebrateMessage {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+#celebrateMessage:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.music-control {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    padding: 16px;
+    background: linear-gradient(to right, var(--electric-blue), var(--neon-green));
+    color: #FFFFFF;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.4s ease-out;
+    z-index: 20; /* Ensure it stays above other elements */
+}
+
+.music-control:hover {
+    background: linear-gradient(to right, var(--electric-blue), var(--neon-green));
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.music-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.4);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.2);
+    }
+}
+
+.animate-twinkle {
+    animation: twinkle 3.5s infinite ease-in-out;
+}
+
+.animate-twinkle.delay-1s {
+    animation-delay: 1s;
+}
+
+.animate-twinkle.delay-2s {
+    animation-delay: 2s;
+}
+
+.animate-twinkle.delay-3s {
+    animation-delay: 3s;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 24px;
+        margin: 12px;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .friendship-icons {
+        gap: 4px;
+        text-2xl;
+    }
+
+    button#giftToggle, button#celebrateButton {
+        padding: 10px 24px;
+        font-size: 1rem;
+    }
+
+    .music-control {
+        top: 16px;
+        right: 16px;
+        padding: 12px;
+    }
+
+    .gift-message p, #celebrateMessage {
+        font-size: 1rem;
+    }
+}
