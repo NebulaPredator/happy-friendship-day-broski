@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Friendship Day, Jason!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+    <svg class="absolute inset-0 z-5 pointer-events-none" width="100%" height="100%">
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <g filter="url(#glow)">
+            <path d="M50 30 Q60 20 70 30 T90 30" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.7" class="animate-twinkle"/>
+            <path d="M200 80 Q210 70 220 80 T240 80" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.6" class="animate-twinkle delay-1s"/>
+            <circle cx="80%" cy="20%" r="3" fill="#00FF00" opacity="0.8" class="animate-twinkle delay-2s"/>
+            <circle cx="30%" cy="60%" r="2" fill="#C0C0C0" opacity="0.7" class="animate-twinkle delay-3s"/>
+        </g>
+    </svg>
+    <div class="container max-w-4xl mx-auto p-10 bg-gray-900/80 rounded-2xl shadow-xl text-center relative z-10 border border-gray-700 backdrop-blur-md" role="main" aria-labelledby="friendship-heading">
+        <h1 id="friendship-heading" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 mb-6">Happy Friendship Day, Jason!</h1>
+        
+        <div class="friendship-banner mb-12">
+            <h3 class="text-2xl text-green-300 mb-4 font-semibold">Best Bud Since 2015</h3>
+            <p class="text-lg text-silver mb-6">To Jason, my ride-or-die! Thanks for the laughs, adventures, and epic vibes.</p>
+            <div class="friendship-icons flex justify-center gap-6 text-3xl">
+                <i class="fas fa-laugh text-green-400 animate-bounce"></i>
+                <i class="fas fa-hiking text-blue-300 animate-pulse"></i>
+                <i class="fas fa-music text-silver animate-spin"></i>
+            </div>
+        </div>
+        
+        <div class="friendship-gift mb-12">
+            <button id="giftToggle" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full hover:from-blue-700 hover:to-green-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300/50 text-lg font-semibold shadow-lg" aria-controls="giftMessage" aria-expanded="false">
+                Open Friendship Gift
+            </button>
+            <div class="gift-message hidden p-6 bg-gradient-to-br from-gray-800 to-blue-900 rounded-xl text-silver mt-4 transition-all duration-700 transform scale-0 border border-gray-600" id="giftMessage" role="region" aria-hidden="true">
+                <p class="text-xl font-medium">A virtual high-five and a promise for more epic days ahead, Jason! 🎉</p>
+            </div>
+        </div>
+        
+        <div class="friendship-celebration bg-gray-800 p-8 rounded-xl border border-gray-600" aria-live="polite">
+            <div class="celebration-title text-2xl font-semibold text-green-300 mb-4">Kick Off the Fun!</div>
+            <button id="celebrateButton" class="px-8 py-3 bg-gradient-to-r from-green-500 to-blue-400 text-white rounded-full hover:from-green-600 hover:to-blue-500 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300/50 text-lg font-semibold shadow-lg" aria-label="Start celebration">
+                <i class="fas fa-fireworks mr-2"></i> Celebrate Now
+            </button>
+            <div id="celebrateMessage" class="hidden mt-4 text-xl text-silver font-medium">Let’s make memories, bro! ✨</div>
+        </div>
+    </div>
+    
+    <button class="music-control fixed top-8 right-8 p-5 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full hover:from-blue-700 hover:to-green-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300/50 shadow-lg z-20" id="musicControl" aria-label="Toggle background music">
+        <i class="fas fa-music"></i>
+    </button>
+    
+    <audio id="bgMusic" loop preload="auto">
+        <source src="./blue.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
